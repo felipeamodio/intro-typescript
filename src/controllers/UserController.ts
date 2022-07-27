@@ -14,8 +14,16 @@ export default {
         const emailService = new EmailService();
 
         emailService.sendMail(
-            {name: 'Felipe Alves', email: 'felipe@email.com.br'},
-            {subject: 'Bem-vindo ao sistema', body: 'Seja bem-vindo, Felipe...aqui você irá encontrar todas as informações que precisa sobre Typescript'},
+            {
+                to: {
+                    name: 'Felipe Alves', 
+                    email: 'felipe@email.com.br'
+                },
+                message: {
+                    subject: 'Bem-vindo ao sistema', 
+                    body: 'Seja bem-vindo, Felipe...aqui você irá encontrar todas as informações que precisa sobre Typescript'
+                },
+            }
         );
         return res.send();
     }
